@@ -3,6 +3,12 @@ import { useDispatch } from "react-redux/es/exports"
 import { useRef } from "react";
 import { UserContext } from "../userContext";
 import { useContext } from "react";
+import { Form } from "react-bootstrap";
+
+import Toast from 'react-bootstrap/Toast';
+import Container from 'react-bootstrap/Container';
+import Button from 'react-bootstrap/Button';
+
 export default function()
 {
     const dispatch = useDispatch();
@@ -24,7 +30,9 @@ export default function()
        data1.then((d)=>{
         console.log(d)
         if(d.payload.data.length >0)
-            {name=d.payload.data[0].username
+            {
+                console.log(d.payload.data[0])
+                name=d.payload.data[0].username
             console.log("name is "+name)
             if (name!="" && name!=undefined)
             {
@@ -43,11 +51,12 @@ export default function()
     }
     return(
         <>
-        <p>email: <input type="text" ref={email}/></p>
-        <p>password: <input type="text" ref={pwd}></input></p>
-        <p>
-            <input type="button" value="Login" onClick={()=>userlogin()}/>
-        </p>
+       
+        <label>email: </label><input type="text" ref={email}/>
+        <label>password: </label> <input type="text" ref={pwd}/>
+        
+            <input type="button"  value="Login" onClick={()=>userlogin()}/>
+            
         </>
     )
 }

@@ -17,7 +17,7 @@ export default function()
             alert("please fill all the fields");
             return;
         }
-        const data = {"name":name.current.value,"email":email.current.value,"pwd":pwd.current.value}
+        const data = {"username":name.current.value,"email":email.current.value,"pwd":pwd.current.value}
        const data1= dispath(createUser(data));
         
         data1.then((d)=>{
@@ -29,6 +29,7 @@ export default function()
     }
     return (
         <>
+        
         <p>name: <input type="text" ref={name}/></p>
         <p>email: <input type="text" ref={email}/></p>
         <p>password: <input type="text" ref={pwd}></input></p>

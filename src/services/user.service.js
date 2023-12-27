@@ -3,12 +3,12 @@ class UserDataService
 {
     getUser(data)
     {
-        return http.post("/login",data)
+        return http.post("/user/login",data)
     }
     create(data)
     {
         console.log(data)
-        return http.post("/",data)
+        return http.post("/user/",data)
     }   
 }
 export default new UserDataService();
